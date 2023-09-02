@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Navbar from "./compound/components/Navbar";
+import Alert from "./compound/components/Alert";
+import Textform from "./compound/components/Textform";
+import About from "./compound/components/About";
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Router>
+        <Navbar title="Text Converter"/>
+        <Alert/>
+        <div className="container my-3">
+          <Routes>
+            <Route exact path="/About" element={<About/>}>
+             
+            </Route>
+
+            <Route  exact path="/Textform" element={<Textform/>}>
+              
+             
+            </Route>
+          </Routes>
+        
+     
+     
+        </div>
+      </Router>
+    </>
   );
 }
 
